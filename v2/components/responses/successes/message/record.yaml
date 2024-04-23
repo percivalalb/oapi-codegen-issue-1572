@@ -1,0 +1,10 @@
+description: Response from query for message record.
+content:
+  application/json:
+    schema:
+      $ref: ../../../schemas/responses/message/record.yaml
+    example:
+      message_id: 42
+      direction: 'outgoing'
+      timestamp: '2023-12-14T14:13:30Z'
+      body: 'Hello'

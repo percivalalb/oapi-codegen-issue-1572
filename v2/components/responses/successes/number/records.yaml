@@ -1,0 +1,7 @@
+description: Response from query for number records.
+content:
+  application/json:
+    schema:
+      $ref: ../../../schemas/responses/number/records.yaml
+    example:
+      - number: '1234'

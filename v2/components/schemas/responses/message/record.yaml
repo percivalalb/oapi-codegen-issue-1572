@@ -1,0 +1,27 @@
+type: object
+required:
+  - message_id
+  - timestamp
+  - body
+  - direction
+properties:
+  message_id:
+    type: integer
+    format: int64
+    x-go-type: uint64
+    x-go-name: MessageID
+    description: The internal ID of the message.
+  body:
+    type: string
+    description: The text content of the message.
+  timestamp:
+    type: string
+    format: date-time
+    description: The time the message was sent or received.
+  direction:
+    type: string
+    enum:
+      - incoming
+      - outgoing
+    description: The direction of the message.
+  

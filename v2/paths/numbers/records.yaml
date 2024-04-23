@@ -1,0 +1,19 @@
+get:
+  tags:
+    - Numbers
+  summary: Fetch numbers.
+  description: |
+    Fetch numbers. Result are returned in a random order.
+  security:
+    - BearerAuth: ['read:numbers']
+  operationId: number_records
+  parameters:
+    - in: query
+      name: limit
+      schema:
+        type: integer
+        minimum: 1
+      required: false
+  responses:
+    '200':
+      $ref: ../../components/responses/successes/number/records.yaml

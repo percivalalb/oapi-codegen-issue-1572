@@ -1,0 +1,12 @@
+get:
+  tags:
+    - Message
+  summary: Fetch message records.
+  description: |
+    Fetch message records.
+  security:
+    - BearerAuth: ['read:messages']
+  operationId: message_records
+  responses:
+    '200':
+      $ref: ../../components/responses/successes/message/records.yaml

@@ -1,0 +1,42 @@
+openapi: 3.0.3
+info:
+  version: 2.0.0
+  title: Reproduces #1572
+  description: Reproduces #1572.
+
+servers:
+  - url: 'https://example.com/api/v2'
+
+tags:
+  - name: Number
+    description: Stuff to do with Numbers.
+  - name: Message
+    description: Stuff to do with messages.
+
+security:
+  - BearerAuth: []
+
+paths:
+  /message/records:
+    $ref: paths/message/records.yaml
+  /message/records/{message_id}:
+    $ref: paths/message/record.yaml
+  /numbers:
+    $ref: paths/numbers/records.yaml
+
+components:
+  schemas:
+    MessageRecordType:
+      $ref: components/schemas/responses/message/record.yaml
+    MessageRecordsType:
+      $ref: components/schemas/responses/message/records.yaml
+    NumberRecord:
+      $ref: components/schemas/responses/number/record.yaml
+    NumberRecords:
+      $ref: components/schemas/responses/number/records.yaml
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: opaque
+

@@ -1,0 +1,23 @@
+get:
+  tags:
+    - Message
+  summary: Fetch a message record.
+  description: |
+    Fetch a message record.
+  security:
+    - BearerAuth: ['read:messages']
+  operationId: message_record
+  parameters:
+    - in: path
+      name: message_id
+      x-go-name: messageID
+      schema:
+       type: integer
+       format: int64
+       x-go-type: uint64
+       x-go-name: MessageID
+      required: true
+      description: The internal ID of the message.
+  responses:
+    '200':
+      $ref: ../../components/responses/successes/message/record.yaml
